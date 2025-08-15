@@ -142,42 +142,37 @@ const HeroSection = () => {
           </motion.p>
 
           {/* CTA Buttons */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.2 }}
-  className="flex flex-col sm:flex-row gap-4 justify-center items-center"
->
-  {/* Download Resume */}
-  <a
-    href="/anmol_futela_resume.pdf"
-    download="Anmol_Futela_Resume.pdf"
-    className="inline-block"
-  >
-    <Button
-      variant="primary"
-      size="lg"
-      icon={Download}
-    >
-      Download Resume
-    </Button>
-  </a>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            {/* Download Resume */}
+            <a
+              href="/anmol_futela_resume.pdf"
+              download="Anmol_Futela_Resume.pdf"
+              className="inline-block"
+            >
+              <Button variant="primary" size="lg" icon={Download}>
+                Download Resume
+              </Button>
+            </a>
 
-  {/* Contact Button */}
-  <Button
-    variant="secondary"
-    size="lg"
-    icon={Mail}
-    onClick={() =>
-      document
-        .getElementById("contact")
-        .scrollIntoView({ behavior: "smooth" })
-    }
-  >
-    Get In Touch
-  </Button>
-</motion.div>
-
+            {/* Contact Button */}
+            <Button
+              variant="secondary"
+              size="lg"
+              icon={Mail}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get In Touch
+            </Button>
+          </motion.div>
 
           {/* Social Links */}
           <motion.div
