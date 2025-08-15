@@ -105,36 +105,37 @@ const AchievementsSection = () => {
 
   const metrics = [
     {
-      number: "3+",
+      number: "8+",
       label: "Projects Built",
-      description: "Full-stack applications with modern technologies",
+      description: "Taskify, StudyBuddy, Currency Converter, Portfolio, SmartQuiz AI, Weather App, Password Generator, and URL Shortener",
       icon: "🚀",
     },
     {
-      number: "5+",
-      label: "Technologies Learned",
-      description: "React, Node.js, Express, MySQL, MongoDB",
+      number: "15+",
+      label: "Technologies Mastered",
+      description: "C, C++, Core Java, Node.js, Express.js, React.js, HTML, CSS, Tailwind CSS, Bootstrap, MongoDB, MySQL, Linux, Firebase, Firestore, and more",
       icon: "💻",
     },
     {
       number: "2",
       label: "Certifications",
-      description: "HackerRank JavaScript and SQL certificates",
+      description: "HackerRank certifications in JavaScript and SQL",
       icon: "🏆",
     },
     {
       number: "100%",
-      label: "Passionate",
-      description: "Dedicated to learning and improving skills",
+      label: "Passion for Development",
+      description: "Fully committed to continuous learning and building impactful projects",
       icon: "🔥",
     },
     {
       number: "71.2%",
       label: "GPA",
-      description: "Strong academic performance in BCA program",
+      description: "Consistent academic performance in BCA program",
       icon: "📚",
     },
   ];
+  
 
   const testimonials = [
     {
@@ -383,8 +384,7 @@ const AchievementsSection = () => {
                 </h4>
                 <ul className="space-y-4">
                   {[
-                    "Active member of College Coding Club",
-                    "Participated in inter-college tech competitions",
+                    "Participated in college tech competitions",
                     "Completed online courses on React and Node.js",
                     "Mentored junior students in programming",
                   ].map((event, index) => (
