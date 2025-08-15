@@ -7,7 +7,6 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
   MessageSquare,
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
@@ -27,16 +26,12 @@ const ContactSection = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form
     const validation = validateForm(formData);
     if (!validation.isValid) {
       setSubmitStatus("error");
@@ -48,7 +43,6 @@ const ContactSection = () => {
 
     try {
       const result = await sendEmail(formData);
-
       if (result.success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
@@ -111,13 +105,15 @@ const ContactSection = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Left Column - Form + Current Status */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="space-y-6"
           >
+            {/* Contact Form */}
             <Card>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <MessageSquare className="w-6 h-6 mr-3 text-primary-400" />
@@ -241,9 +237,29 @@ const ContactSection = () => {
                 </Button>
               </form>
             </Card>
+
+            {/* Current Status Below Form */}
+            <Card>
+              <h3 className="text-xl font-bold text-white mb-4">Current Status</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-green-400 font-medium">
+                    Available for opportunities
+                  </span>
+                </div>
+                <p className="text-secondary-400 text-sm">
+                  I'm currently open to new opportunities, internships, and
+                  entry-level positions. Whether you need a passionate developer
+                  for your team or want to collaborate on interesting projects,
+                  I'd love to discuss how I can contribute and grow with your
+                  organization.
+                </p>
+              </div>
+            </Card>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Right Column - Contact Info & Social Links */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -251,7 +267,6 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* Contact Info Cards */}
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -292,9 +307,7 @@ const ContactSection = () => {
 
             {/* Social Links */}
             <Card>
-              <h3 className="text-xl font-bold text-white mb-6">
-                Connect With Me
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-6">Connect With Me</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -310,28 +323,6 @@ const ContactSection = () => {
                     <social.icon className="w-6 h-6" />
                   </motion.a>
                 ))}
-              </div>
-            </Card>
-
-            {/* Availability Status */}
-            <Card>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Current Status
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 font-medium">
-                    Available for opportunities
-                  </span>
-                </div>
-                <p className="text-secondary-400 text-sm">
-                  I'm currently open to new opportunities, internships, and
-                  entry-level positions. Whether you need a passionate developer
-                  for your team or want to collaborate on interesting projects,
-                  I'd love to discuss how I can contribute and grow with your
-                  organization.
-                </p>
               </div>
             </Card>
           </motion.div>

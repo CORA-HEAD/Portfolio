@@ -151,9 +151,6 @@ const Footer = () => {
           <p className="text-secondary-400">
             © {currentYear} Anmol Futela. All rights reserved.
           </p>
-          <p className="text-secondary-500 text-sm mt-2">
-            Built with React, Tailwind CSS, and Framer Motion
-          </p>
         </motion.div>
       </div>
     </footer>

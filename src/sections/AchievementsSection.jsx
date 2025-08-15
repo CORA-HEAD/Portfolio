@@ -1,14 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Trophy,
   Star,
-  Award,
-  TrendingUp,
-  Users,
   Target,
   ExternalLink,
   Eye,
+  Medal, 
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import Card from "../components/Card";
@@ -16,76 +13,14 @@ import Card from "../components/Card";
 const AchievementsSection = () => {
   const achievements = [
     {
-      title: "Academic Excellence Award",
-      organization: "Maharaja Agrasen Institute",
-      year: "2024",
-      description:
-        "Recognized for outstanding academic performance and consistent high grades in Computer Applications program.",
-      icon: Trophy,
-      category: "Academic",
-      color: "text-yellow-400",
-      certificate: null,
-      certificateLink: null,
-    },
-    {
-      title: "Best Project Award",
-      organization: "College Tech Fest",
-      year: "2024",
-      description:
-        "Won first place for developing the StudyBuddy E-Learning Platform with innovative features and clean code.",
-      icon: Award,
-      category: "Project",
-      color: "text-blue-400",
-      certificate: null,
-      certificateLink: null,
-    },
-    {
-      title: "HackerRank JavaScript (Basic)",
-      organization: "HackerRank",
-      year: "2024",
-      description:
-        "Earned JavaScript (Basic) certificate demonstrating strong programming fundamentals and problem-solving skills.",
-      icon: Star,
-      category: "Certification",
-      color: "text-purple-400",
-      certificate: "/certificates/hackerrank-javascript.jpg",
-      certificateLink:
-        "https://www.hackerrank.com/certificates/your-certificate-id",
-    },
-    {
-      title: "HackerRank SQL (Basic)",
-      organization: "HackerRank",
-      year: "2024",
-      description:
-        "Earned SQL (Basic) certificate showing proficiency in database querying and data manipulation.",
-      icon: Star,
-      category: "Certification",
-      color: "text-purple-400",
-      certificate: "/certificates/hackerrank-sql.jpg",
-      certificateLink:
-        "https://www.hackerrank.com/certificates/your-sql-certificate-id",
-    },
-    {
-      title: "Problem Solving Champion",
-      organization: "College Coding Club",
+      title: "3rd Position - Quiz Competition",
+      organization: "College Cultural Fest",
       year: "2023",
       description:
-        "Recognized for exceptional problem-solving skills and helping peers with debugging and code optimization.",
-      icon: TrendingUp,
-      category: "Skills",
-      color: "text-green-400",
-      certificate: null,
-      certificateLink: null,
-    },
-    {
-      title: "Team Collaboration Award",
-      organization: "Group Project Competition",
-      year: "2023",
-      description:
-        "Awarded for excellent teamwork and communication skills while working on collaborative development projects.",
-      icon: Users,
-      category: "Leadership",
-      color: "text-pink-400",
+        "Secured third position in the Inter-College Quiz Competition, showcasing quick thinking and broad general knowledge.",
+      icon: Medal,
+      category: "Competition",
+      color: "text-purple-400",
       certificate: null,
       certificateLink: null,
     },
@@ -107,17 +42,19 @@ const AchievementsSection = () => {
     {
       number: "8+",
       label: "Projects Built",
-      description: "Taskify, StudyBuddy, Currency Converter, Portfolio, SmartQuiz AI, Weather App, Password Generator, and URL Shortener",
+      description:
+        "Taskify, StudyBuddy, Currency Converter, Portfolio, SmartQuiz AI, Weather App, Password Generator, and URL Shortener",
       icon: "🚀",
     },
     {
       number: "15+",
       label: "Technologies Mastered",
-      description: "C, C++, Core Java, Node.js, Express.js, React.js, HTML, CSS, Tailwind CSS, Bootstrap, MongoDB, MySQL, Linux, Firebase, Firestore, and more",
+      description:
+        "C, C++, Core Java, Node.js, Express.js, React.js, HTML, CSS, Tailwind CSS, Bootstrap, MongoDB, MySQL, Linux, Firebase, Firestore, and more",
       icon: "💻",
     },
     {
-      number: "2",
+      number: "5",
       label: "Certifications",
       description: "HackerRank certifications in JavaScript and SQL",
       icon: "🏆",
@@ -135,7 +72,6 @@ const AchievementsSection = () => {
       icon: "📚",
     },
   ];
-  
 
   const testimonials = [
     {
@@ -154,7 +90,7 @@ const AchievementsSection = () => {
     },
     {
       name: "Raman Dhiman",
-      position: "BCA Student, Node.js Project Collaborato",
+      position: "BCA Student, Node.js Project Collaborator",
       content:
         "I worked with Anmol on a Node.js backend project, and his knowledge of APIs, Express, and database integration was outstanding. He made the development process smooth and efficient.",
       rating: 5,
@@ -389,7 +325,7 @@ const AchievementsSection = () => {
                     "Mentored junior students in programming",
                   ].map((event, index) => (
                     <motion.li
-                      key={event}
+                      key={index}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -418,7 +354,7 @@ const AchievementsSection = () => {
                     "Developed problem-solving abilities",
                   ].map((pub, index) => (
                     <motion.li
-                      key={pub}
+                      key={index}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}

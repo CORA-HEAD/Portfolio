@@ -52,15 +52,43 @@ export const skills = {
 
 export const certifications = [
     {
-        name: 'JavaScript (Basic) Certificate',
-        issuer: 'HackerRank',
-        year: 2024,
-        icon: '🟨'
+      name: 'JavaScript (Basic) Certificate',
+      issuer: 'HackerRank',
+      year: 2024,
+      image: '/certificates/js-basic.png',
+      link: 'https://www.hackerrank.com/certificates/iframe/20aa96e04dd0',
+      description: 'Demonstrates fundamental JavaScript concepts including variables, functions, loops, and basic problem-solving.'
     },
     {
-        name: 'SQL (Basic) Certificate',
-        issuer: 'HackerRank',
+      name: 'SQL (Basic) Certificate',
+      issuer: 'HackerRank',
+      year: 2024,
+      image: '/certificates/sql-basic.png',
+      link: 'https://www.hackerrank.com/certificates/iframe/8bdf35f58c6c',
+      description: 'Covers essential SQL concepts like SELECT queries, filtering, sorting, and basic joins.'
+    },
+    {
+      name: 'CSS (Basic) Certificate',
+      issuer: 'HackerRank',
+      year: 2024,
+      image: '/certificates/css-basic.png',
+      link: 'https://www.hackerrank.com/certificates/iframe/40c8ffb38b0a',
+      description: 'Validates foundational CSS skills such as styling, selectors, and layout techniques.'
+    },
+    {
+      name: 'Introduction to Cybersecurity',
+      issuer: 'Cisco Networking Academy',
+      year: 2025,
+      image: '/certificates/cisco-cybersecurity.png', 
+      link: '', 
+      description: 'Explores core cybersecurity concepts, potential threats, and the importance of security in the digital age.'
+    }, {
+        name: "MERN Stack Training",
+        issuer: "MAIMT",
         year: 2024,
-        icon: '🗄️'
-    }
-]; 
+        image: "/certificates/mern-stack-training.png",
+        link: "",
+        description: "Successfully completed 3 months of MERN Stack Training and met all program expectations."
+      },
+  ];
+  

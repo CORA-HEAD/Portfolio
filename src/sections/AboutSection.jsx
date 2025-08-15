@@ -20,7 +20,7 @@ const AboutSection = () => {
     },
     {
       icon: Award,
-      number: "2",
+      number: "5",
       label: "Certificates",
       color: "text-primary-400",
     },
@@ -140,62 +140,56 @@ const AboutSection = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Column - Stats & Expertise */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="card text-center"
-                >
-                  <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
-                  <div className={`text-3xl font-bold ${stat.color}`}>
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-secondary-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Expertise Cards */}
-            <div className="space-y-4">
-              {expertise.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="glass p-4 rounded-lg border border-secondary-700/30"
-                >
-                  <div className="flex items-start space-x-3">
-                    <span className="text-2xl">{item.icon}</span>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-sm text-secondary-400">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
+
+        {/* Stats & Expertise Side by Side */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12 flex flex-col lg:flex-row gap-8"
+        >
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-6 flex-1">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="card text-center"
+              >
+                <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
+                <div className={`text-3xl font-bold ${stat.color}`}>{stat.number}</div>
+                <div className="text-sm text-secondary-400">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Expertise */}
+          <div className="flex-1 space-y-4">
+            {expertise.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="glass p-4 rounded-lg border border-secondary-700/30"
+              >
+                <div className="flex items-start space-x-3">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">{item.title}</h4>
+                    <p className="text-sm text-secondary-400">{item.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Additional Info */}
         <motion.div

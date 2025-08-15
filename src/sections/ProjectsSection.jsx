@@ -28,28 +28,33 @@ const ProjectsSection = () => {
           onClick={() => setSelectedProject(project)}
         >
           {/* Project Image */}
-          <div className="relative h-48 mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary-900/20 to-accent-900/20">
-            <div className="absolute inset-0 flex items-center justify-center">
+          {project.image ? (
+            <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              {project.featured && (
+                <div className="absolute top-4 right-4 bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                  Featured
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="relative h-48 mb-6 overflow-hidden rounded-lg bg-gradient-to-br from-primary-900/20 to-accent-900/20 flex items-center justify-center">
               <span className="text-6xl opacity-20">
                 {project.category === "AI/ML"
                   ? "🤖"
-                  : project.category === "Mobile"
-                  ? "📱"
-                  : project.category === "DevOps"
-                  ? "🔄"
-                  : project.category === "Enterprise"
-                  ? "🏢"
-                  : project.category === "Real-time"
-                  ? "⚡"
                   : "💻"}
               </span>
+              {project.featured && (
+                <div className="absolute top-4 right-4 bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                  Featured
+                </div>
+              )}
             </div>
-            {project.featured && (
-              <div className="absolute top-4 right-4 bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-                Featured
-              </div>
-            )}
-          </div>
+          )}
 
           {/* Project Info */}
           <div className="space-y-4">
@@ -170,6 +175,17 @@ const ProjectsSection = () => {
                 </button>
               </div>
 
+              {/* Project Image */}
+              {project.image && (
+                <div className="mb-6">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover rounded-xl"
+                  />
+                </div>
+              )}
+
               {/* Project Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Column */}
@@ -182,9 +198,7 @@ const ProjectsSection = () => {
                       {project.highlights.map((highlight, index) => (
                         <li key={index} className="flex items-start space-x-2">
                           <span className="text-primary-400 mt-1">•</span>
-                          <span className="text-secondary-300">
-                            {highlight}
-                          </span>
+                          <span className="text-secondary-300">{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -220,9 +234,7 @@ const ProjectsSection = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-secondary-400">Team Size:</span>
-                        <span className="text-white">
-                          {project.teamSize} members
-                        </span>
+                        <span className="text-white">{project.teamSize} members</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-secondary-400">Year:</span>

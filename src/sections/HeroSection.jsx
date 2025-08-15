@@ -6,10 +6,11 @@ import Button from "../components/Button";
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const texts = [
-    "React.js Developer",
-    "Node.js Developer",
     "Full Stack Developer",
     "Web Developer",
+    "React.js Developer",
+    "Node.js Developer",
+    "Backend Developer",
   ];
 
   useEffect(() => {
@@ -194,7 +195,7 @@ const HeroSection = () => {
               },
               {
                 icon: Mail,
-                url: "mailto:anmolfutela94@gmail.com",
+                url: "https://mail.google.com/mail/?view=cm&fs=1&to=anmolfutela94@gmail.com",
                 label: "Email",
               },
             ].map((social) => (
