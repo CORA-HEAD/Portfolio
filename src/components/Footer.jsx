@@ -24,8 +24,8 @@ const Footer = () => {
     {
       icon: Mail,
       text: "anmolfutela94@gmail.com",
-      url: "mailto:anmolfutela94@gmail.com",
-    },
+      url: "https://mail.google.com/mail/?view=cm&fs=1&to=anmolfutela94@gmail.com",
+    },    
     {
       icon: Phone,
       text: "+91 9817219375",
