@@ -242,11 +242,11 @@ const HeroSection = () => {
       >
         <div className="glass p-6 rounded-2xl space-y-4">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary-400">3+</div>
+            <div className="text-3xl font-bold text-primary-400">8+</div>
             <div className="text-sm text-secondary-400">Projects Built</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent-400">5+</div>
+            <div className="text-3xl font-bold text-accent-400">15+</div>
             <div className="text-sm text-secondary-400">Technologies</div>
           </div>
           <div className="text-center">

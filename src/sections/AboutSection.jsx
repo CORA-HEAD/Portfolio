@@ -8,13 +8,13 @@ const AboutSection = () => {
   const stats = [
     {
       icon: Code,
-      number: "3+",
+      number: "8+",
       label: "Projects Built",
       color: "text-primary-400",
     },
     {
       icon: Cloud,
-      number: "5+",
+      number: "15+",
       label: "Technologies",
       color: "text-accent-400",
     },
