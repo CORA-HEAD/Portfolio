@@ -13,6 +13,7 @@ import {
 import SectionTitle from "../components/SectionTitle";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { sendEmail, validateForm } from "../utils/emailService";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -34,14 +35,32 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate form
+    const validation = validateForm(formData);
+    if (!validation.isValid) {
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 3000);
+      return;
+    }
+
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const result = await sendEmail(formData);
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setSubmitStatus(null), 3000);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -64,14 +83,14 @@ const ContactSection = () => {
       title: "Location",
       value: "Yamunanagar, Haryana",
       link: null,
-      description: "Available for remote & local opportunities",
+      description: "Available for remote & on-site opportunities",
     },
   ];
 
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/anmolfutela",
+      url: "https://github.com/CORA-HEAD",
       icon: Github,
       color: "hover:text-gray-400",
     },
@@ -114,6 +133,19 @@ const ContactSection = () => {
                   <p className="text-green-400 text-center">
                     Thank you! Your message has been sent successfully. I'll get
                     back to you soon.
+                  </p>
+                </motion.div>
+              )}
+
+              {submitStatus === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
+                >
+                  <p className="text-red-400 text-center">
+                    Failed to send message. Please try again or contact me
+                    directly at anmolfutela94@gmail.com
                   </p>
                 </motion.div>
               )}
@@ -294,9 +326,11 @@ const ContactSection = () => {
                   </span>
                 </div>
                 <p className="text-secondary-400 text-sm">
-                  I'm currently open to new opportunities, internships, and entry-level positions. 
-                  Whether you need a passionate developer for your team or want to collaborate on 
-                  interesting projects, I'd love to discuss how I can contribute and grow with your organization.
+                  I'm currently open to new opportunities, internships, and
+                  entry-level positions. Whether you need a passionate developer
+                  for your team or want to collaborate on interesting projects,
+                  I'd love to discuss how I can contribute and grow with your
+                  organization.
                 </p>
               </div>
             </Card>
@@ -316,8 +350,9 @@ const ContactSection = () => {
               Ready to Start Your Next Project?
             </h3>
             <p className="text-secondary-400 mb-6 max-w-2xl mx-auto">
-              Let's discuss how my passion for web development, problem-solving skills, 
-              and eagerness to learn can contribute to your team and help achieve your goals.
+              Let's discuss how my passion for web development, problem-solving
+              skills, and eagerness to learn can contribute to your team and
+              help achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -336,7 +371,9 @@ const ContactSection = () => {
                 variant="secondary"
                 size="lg"
                 icon={Send}
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                onClick={() =>
+                  window.open("/anmol_futela_resume.pdf", "_blank")
+                }
               >
                 Download Resume
               </Button>

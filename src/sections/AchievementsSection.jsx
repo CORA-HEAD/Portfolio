@@ -1,6 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Trophy, Star, Award, TrendingUp, Users, Target } from "lucide-react";
+import {
+  Trophy,
+  Star,
+  Award,
+  TrendingUp,
+  Users,
+  Target,
+  ExternalLink,
+  Eye,
+} from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import Card from "../components/Card";
 
@@ -15,6 +24,8 @@ const AchievementsSection = () => {
       icon: Trophy,
       category: "Academic",
       color: "text-yellow-400",
+      certificate: null,
+      certificateLink: null,
     },
     {
       title: "Best Project Award",
@@ -25,16 +36,34 @@ const AchievementsSection = () => {
       icon: Award,
       category: "Project",
       color: "text-blue-400",
+      certificate: null,
+      certificateLink: null,
     },
     {
-      title: "HackerRank Certifications",
+      title: "HackerRank JavaScript (Basic)",
       organization: "HackerRank",
       year: "2024",
       description:
-        "Earned JavaScript (Basic) and SQL (Basic) certificates demonstrating strong programming fundamentals.",
+        "Earned JavaScript (Basic) certificate demonstrating strong programming fundamentals and problem-solving skills.",
       icon: Star,
       category: "Certification",
       color: "text-purple-400",
+      certificate: "/certificates/hackerrank-javascript.jpg",
+      certificateLink:
+        "https://www.hackerrank.com/certificates/your-certificate-id",
+    },
+    {
+      title: "HackerRank SQL (Basic)",
+      organization: "HackerRank",
+      year: "2024",
+      description:
+        "Earned SQL (Basic) certificate showing proficiency in database querying and data manipulation.",
+      icon: Star,
+      category: "Certification",
+      color: "text-purple-400",
+      certificate: "/certificates/hackerrank-sql.jpg",
+      certificateLink:
+        "https://www.hackerrank.com/certificates/your-sql-certificate-id",
     },
     {
       title: "Problem Solving Champion",
@@ -45,6 +74,8 @@ const AchievementsSection = () => {
       icon: TrendingUp,
       category: "Skills",
       color: "text-green-400",
+      certificate: null,
+      certificateLink: null,
     },
     {
       title: "Team Collaboration Award",
@@ -55,6 +86,8 @@ const AchievementsSection = () => {
       icon: Users,
       category: "Leadership",
       color: "text-pink-400",
+      certificate: null,
+      certificateLink: null,
     },
     {
       title: "Innovation in Learning",
@@ -65,6 +98,8 @@ const AchievementsSection = () => {
       icon: Target,
       category: "Innovation",
       color: "text-orange-400",
+      certificate: null,
+      certificateLink: null,
     },
   ];
 
@@ -94,39 +129,33 @@ const AchievementsSection = () => {
       icon: "🔥",
     },
     {
-      number: "4.0",
+      number: "71.2%",
       label: "GPA",
       description: "Strong academic performance in BCA program",
       icon: "📚",
-    },
-    {
-      number: "24/7",
-      label: "Learning Mode",
-      description: "Always eager to learn new technologies",
-      icon: "⚡",
     },
   ];
 
   const testimonials = [
     {
-      name: "Priya Sharma",
+      name: "Sidak Singh",
       position: "BCA Student, Classmate",
       content:
-        "Anmol is an amazing study partner! He helped me understand React.js concepts and always explains complex topics in a simple way. His projects are really impressive.",
-      rating: 5,
+        "Anmol is an amazing study partner! He explains complex topics in a simple and easy-to-understand way. His projects are really impressive.",
+      rating: 4,
     },
     {
       name: "Rahul Kumar",
-      position: "BCA Student, Project Partner",
+      position: "BCA Student, Peer Learner",
       content:
-        "Working with Anmol on our group project was great. He's very organized, writes clean code, and always meets deadlines. His debugging skills are excellent!",
+        "Anmol’s guidance has helped me improve my coding skills tremendously. He’s patient, explains concepts clearly, and always brings innovative ideas to the table.",
       rating: 5,
     },
     {
-      name: "Neha Patel",
-      position: "BCA Student, Coding Club Member",
+      name: "Raman Dhiman",
+      position: "BCA Student, Node.js Project Collaborato",
       content:
-        "Anmol is always willing to help others learn. He shares his knowledge freely and creates really useful tools. His passion for coding is inspiring!",
+        "I worked with Anmol on a Node.js backend project, and his knowledge of APIs, Express, and database integration was outstanding. He made the development process smooth and efficient.",
       rating: 5,
     },
   ];
@@ -147,7 +176,7 @@ const AchievementsSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {metrics.map((metric, index) => (
               <motion.div
                 key={metric.label}
@@ -157,15 +186,15 @@ const AchievementsSection = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <Card className="h-full">
-                  <div className="text-3xl mb-2">{metric.icon}</div>
-                  <div className="text-2xl font-bold text-primary-400 mb-1">
+                <Card className="h-full p-6 hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl mb-3">{metric.icon}</div>
+                  <div className="text-3xl font-bold text-primary-400 mb-2">
                     {metric.number}
                   </div>
-                  <div className="text-sm font-semibold text-white mb-1">
+                  <div className="text-sm font-semibold text-white mb-2">
                     {metric.label}
                   </div>
-                  <div className="text-xs text-secondary-400">
+                  <div className="text-xs text-secondary-400 leading-relaxed">
                     {metric.description}
                   </div>
                 </Card>
@@ -187,7 +216,7 @@ const AchievementsSection = () => {
               Awards & Recognition
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={achievement.title}
@@ -195,29 +224,90 @@ const AchievementsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 rounded-lg bg-secondary-800/30 border border-secondary-700/30 hover:border-primary-500/30 transition-colors duration-300"
+                  className="p-6 rounded-lg bg-secondary-800/30 border border-secondary-700/30 hover:border-primary-500/30 hover:transform hover:scale-105 transition-all duration-300"
                 >
-                  <div className="flex items-start space-x-3 mb-4">
-                    <achievement.icon
-                      className={`w-8 h-8 ${achievement.color} flex-shrink-0`}
-                    />
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div
+                      className={`p-3 rounded-lg bg-primary-900/20 ${achievement.color} bg-opacity-20`}
+                    >
+                      <achievement.icon
+                        className={`w-6 h-6 ${achievement.color} flex-shrink-0`}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-white mb-2 text-lg">
                         {achievement.title}
                       </h4>
-                      <div className="flex items-center space-x-2 text-sm text-secondary-400 mb-2">
-                        <span>{achievement.organization}</span>
+                      <div className="flex items-center space-x-2 text-sm text-secondary-400 mb-3">
+                        <span className="font-medium">
+                          {achievement.organization}
+                        </span>
                         <span>•</span>
                         <span>{achievement.year}</span>
                       </div>
-                      <span className="px-2 py-1 bg-primary-900/20 text-primary-400 text-xs rounded-full border border-primary-500/30">
+                      <span className="px-3 py-1 bg-primary-900/20 text-primary-400 text-xs rounded-full border border-primary-500/30 font-medium">
                         {achievement.category}
                       </span>
                     </div>
                   </div>
-                  <p className="text-sm text-secondary-400 leading-relaxed">
+                  <p className="text-sm text-secondary-400 leading-relaxed mb-4">
                     {achievement.description}
                   </p>
+
+                  {/* Certificate Display */}
+                  {achievement.certificate && (
+                    <div className="mt-4">
+                      <div className="relative group">
+                        <img
+                          src={achievement.certificate}
+                          alt={`${achievement.title} Certificate`}
+                          className="w-full h-32 object-cover rounded-lg border border-secondary-600/30 hover:border-primary-500/50 transition-colors duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                          <div className="flex space-x-2">
+                            <motion.button
+                              onClick={() =>
+                                window.open(achievement.certificate, "_blank")
+                              }
+                              className="p-2 bg-primary-500/80 rounded-full text-white hover:bg-primary-400 transition-colors duration-300"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                            >
+                              <Eye className="w-4 h-4" />
+                            </motion.button>
+                            {achievement.certificateLink && (
+                              <motion.a
+                                href={achievement.certificateLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 bg-accent-500/80 rounded-full text-white hover:bg-accent-400 transition-colors duration-300"
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                              </motion.a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mt-2">
+                        <span className="text-xs text-secondary-400">
+                          Certificate
+                        </span>
+                        {achievement.certificateLink && (
+                          <a
+                            href={achievement.certificateLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-primary-400 hover:text-primary-300 transition-colors duration-300 flex items-center space-x-1"
+                          >
+                            <span>View Certificate</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -230,6 +320,7 @@ const AchievementsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
+          className="mb-16"
         >
           <Card>
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
@@ -244,7 +335,7 @@ const AchievementsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-center p-6 rounded-lg bg-secondary-800/20 border border-secondary-700/30 hover:border-primary-500/30 transition-all duration-300"
                 >
                   <div className="mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -255,11 +346,11 @@ const AchievementsSection = () => {
                       />
                     ))}
                   </div>
-                  <blockquote className="text-secondary-300 mb-6 italic leading-relaxed">
+                  <blockquote className="text-secondary-300 mb-6 italic leading-relaxed text-base">
                     "{testimonial.content}"
                   </blockquote>
                   <div>
-                    <div className="font-semibold text-white">
+                    <div className="font-semibold text-white text-lg">
                       {testimonial.name}
                     </div>
                     <div className="text-sm text-secondary-400">
@@ -278,19 +369,19 @@ const AchievementsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16"
         >
           <Card>
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Learning Journey Highlights
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-white mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-6 p-6 rounded-lg bg-secondary-800/20 border border-secondary-700/30">
+                <h4 className="text-xl font-semibold text-white mb-6 flex items-center">
+                  <span className="text-primary-400 mr-3">📚</span>
                   Academic Activities
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {[
                     "Active member of College Coding Club",
                     "Participated in inter-college tech competitions",
@@ -303,20 +394,23 @@ const AchievementsSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-start space-x-2"
+                      className="flex items-start space-x-3"
                     >
-                      <span className="text-primary-400 mt-1">•</span>
-                      <span className="text-secondary-300">{event}</span>
+                      <span className="text-primary-400 mt-1 text-lg">•</span>
+                      <span className="text-secondary-300 leading-relaxed">
+                        {event}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>
               </div>
 
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-white mb-4">
+              <div className="space-y-6 p-6 rounded-lg bg-secondary-800/20 border border-secondary-700/30">
+                <h4 className="text-xl font-semibold text-white mb-6 flex items-center">
+                  <span className="text-primary-400 mr-3">🚀</span>
                   Skills Development
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {[
                     "Self-taught modern web technologies",
                     "Built practical projects for portfolio",
@@ -329,10 +423,12 @@ const AchievementsSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-start space-x-2"
+                      className="flex items-start space-x-3"
                     >
-                      <span className="text-primary-400 mt-1">•</span>
-                      <span className="text-secondary-300">{pub}</span>
+                      <span className="text-primary-400 mt-1 text-lg">•</span>
+                      <span className="text-secondary-300 leading-relaxed">
+                        {pub}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>

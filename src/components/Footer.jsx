@@ -8,20 +8,14 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/alexrodriguez",
+      url: "https://github.com/CORA-HEAD",
       icon: Github,
       color: "hover:text-gray-400",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/alexrodriguez",
+      url: "https://linkedin.com/in/anmolfutela",
       icon: Linkedin,
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/alexrodriguez",
-      icon: Twitter,
       color: "hover:text-blue-400",
     },
   ];
@@ -29,17 +23,17 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: Mail,
-      text: "alex.rodriguez@email.com",
-      url: "mailto:alex.rodriguez@email.com",
+      text: "anmolfutela94@gmail.com",
+      url: "mailto:anmolfutela94@gmail.com",
     },
     {
       icon: Phone,
-      text: "+1 (555) 123-4567",
-      url: "tel:+15551234567",
+      text: "+91 9817219375",
+      url: "tel:+919817219375",
     },
     {
       icon: MapPin,
-      text: "San Francisco, CA",
+      text: "Yamunanagar, Haryana",
       url: null,
     },
   ];
@@ -59,11 +53,11 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold gradient-text">Alex Rodriguez</h3>
+            <h3 className="text-2xl font-bold gradient-text">Anmol Futela</h3>
             <p className="text-secondary-400">
-              Senior Software Engineer & Team Leader with 15+ years of
-              experience building scalable applications and leading development
-              teams.
+              Full Stack Developer with expertise in React.js, Node.js, and
+              modern web technologies. Passionate about building innovative
+              solutions.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -92,19 +86,24 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2">
-              {["About", "Skills", "Projects", "Experience", "Contact"].map(
-                (link) => (
-                  <li key={link}>
-                    <motion.a
-                      href={`#${link.toLowerCase()}`}
-                      className="text-secondary-400 hover:text-primary-400 transition-colors duration-300"
-                      whileHover={{ x: 5 }}
-                    >
-                      {link}
-                    </motion.a>
-                  </li>
-                )
-              )}
+              {[
+                "About",
+                "Skills",
+                "Projects",
+                "Education",
+                "Achievements",
+                "Contact",
+              ].map((link) => (
+                <li key={link}>
+                  <motion.a
+                    href={`#${link.toLowerCase()}`}
+                    className="text-secondary-400 hover:text-primary-400 transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
+                    {link}
+                  </motion.a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -150,7 +149,7 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-secondary-700/30 text-center"
         >
           <p className="text-secondary-400">
-            © {currentYear} Alex Rodriguez. All rights reserved.
+            © {currentYear} Anmol Futela. All rights reserved.
           </p>
           <p className="text-secondary-500 text-sm mt-2">
             Built with React, Tailwind CSS, and Framer Motion

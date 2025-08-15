@@ -26,7 +26,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -142,33 +142,42 @@ const HeroSection = () => {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              icon={Download}
-              onClick={() => window.open("/resume.pdf", "_blank")}
-            >
-              Download Resume
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              icon={Mail}
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Get In Touch
-            </Button>
-          </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 1.2 }}
+  className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+>
+  {/* Download Resume */}
+  <a
+    href="/anmol_futela_resume.pdf"
+    download="Anmol_Futela_Resume.pdf"
+    className="inline-block"
+  >
+    <Button
+      variant="primary"
+      size="lg"
+      icon={Download}
+    >
+      Download Resume
+    </Button>
+  </a>
+
+  {/* Contact Button */}
+  <Button
+    variant="secondary"
+    size="lg"
+    icon={Mail}
+    onClick={() =>
+      document
+        .getElementById("contact")
+        .scrollIntoView({ behavior: "smooth" })
+    }
+  >
+    Get In Touch
+  </Button>
+</motion.div>
+
 
           {/* Social Links */}
           <motion.div
@@ -180,7 +189,7 @@ const HeroSection = () => {
             {[
               {
                 icon: Github,
-                url: "https://github.com/anmolfutela",
+                url: "https://github.com/CORA-HEAD",
                 label: "GitHub",
               },
               {

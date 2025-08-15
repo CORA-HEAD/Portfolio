@@ -20,7 +20,7 @@ const Navbar = ({ activeSection }) => {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
     { name: "Achievements", href: "#achievements" },
     { name: "Contact", href: "#contact" },
   ];
@@ -56,7 +56,7 @@ const Navbar = ({ activeSection }) => {
               }}
               className="text-2xl font-bold gradient-text"
             >
-              AR
+              AF
             </a>
           </motion.div>
 
@@ -88,8 +88,8 @@ const Navbar = ({ activeSection }) => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <motion.a
-              href="/resume.pdf"
-              download
+              href="/anmol_futela_resume.pdf"
+              download="Anmol_Futela_Resume.pdf"
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -146,7 +146,7 @@ const Navbar = ({ activeSection }) => {
                 </motion.a>
               ))}
               <motion.a
-                href="/resume.pdf"
+                href="/anmol_futela_resume.pdf"
                 download
                 className="btn btn-primary w-full mt-4"
                 whileHover={{ scale: 1.02 }}

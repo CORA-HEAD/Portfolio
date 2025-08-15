@@ -68,11 +68,33 @@ const AboutSection = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Content */}
+          {/* Left Column - Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center lg:justify-start"
+          >
+            <div className="relative">
+              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-2xl">
+                <img
+                  src="/anmol-profile.jpg"
+                  alt="Anmol Futela"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary-400 to-accent-400 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-2xl">💻</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
@@ -204,10 +226,10 @@ const AboutSection = () => {
           </Card>
 
           <Card className="text-center">
-            <h4 className="text-xl font-semibold text-white mb-3">Education</h4>
+            <h4 className="text-xl font-semibold text-white mb-3">Learning</h4>
             <p className="text-secondary-400">
-              Bachelor of Computer Applications from Maharaja Agrasen Institute
-              of Management and Technology.
+              Continuously learning new technologies and best practices to stay
+              updated with the latest industry trends.
             </p>
           </Card>
         </motion.div>
